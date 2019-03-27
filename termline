@@ -15,7 +15,7 @@ Usage: termline [FLAG] [ARG]
   bright-magenta, bright-cyan, bright-white.
 
 Arguments:
-  [color]           One of 16 named colors or a color code between 0 and 255.
+  [color]           A named colour or a colour code between 0 and 255.
 
 Flags:
   -h, --help        Print this help text and exit.
