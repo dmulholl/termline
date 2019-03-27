@@ -1,0 +1,97 @@
+#!/usr/bin/env bash
+# ──────────────────────────────────────────────────────────────────────────────
+# Print a coloured line across the width of the terminal.
+# ──────────────────────────────────────────────────────────────────────────────
+
+# Print the help text.
+print_help() {
+    cat <<EOF
+Usage: termline [FLAG] [ARG]
+
+  Print a coloured line across the width of the terminal.
+
+  Color names: black, red, green, yellow, blue, magenta, cyan, white,
+  bright-black, bright-red, bright-green, bright-yellow, bright-blue,
+  bright-magenta, bright-cyan, bright-white.
+
+Arguments:
+  [color]           One of 16 named colors or a color code between 0 and 255.
+
+Flags:
+  -h, --help        Print this help text and exit.
+EOF
+}
+
+# Check for a colour argument.
+case "$1" in
+    --help|-h)
+        print_help
+        exit 0
+        ;;
+    black)
+        echo -ne "\e[30m"
+        ;;
+    red)
+        echo -ne "\e[31m"
+        ;;
+    green)
+        echo -ne "\e[32m"
+        ;;
+    yellow)
+        echo -ne "\e[33m"
+        ;;
+    blue)
+        echo -ne "\e[34m"
+        ;;
+    magenta)
+        echo -ne "\e[35m"
+        ;;
+    cyan)
+        echo -ne "\e[36m"
+        ;;
+    white)
+        echo -ne "\e[37m"
+        ;;
+    bright-black|grey|gray)
+        echo -ne "\e[90m"
+        ;;
+    bright-red)
+        echo -ne "\e[91m"
+        ;;
+    bright-green)
+        echo -ne "\e[92m"
+        ;;
+    bright-yellow)
+        echo -ne "\e[93m"
+        ;;
+    bright-blue)
+        echo -ne "\e[94m"
+        ;;
+    bright-magenta)
+        echo -ne "\e[95m"
+        ;;
+    bright-cyan)
+        echo -ne "\e[96m"
+        ;;
+    bright-white)
+        echo -ne "\e[97m"
+        ;;
+    "")
+        ;;
+    *)
+        echo -ne "\e[38;5;$1m"
+        ;;
+esac
+
+# Get the terminal width.
+cols=$(tput cols)
+
+for (( i=0; i<$cols; i++ )); do
+    echo -n "─"
+done
+echo
+
+# Reset the foreground colour to its default.
+if test -n "$1"; then
+    echo -ne "\e[39m"
+fi
