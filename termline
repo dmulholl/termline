@@ -10,9 +10,16 @@ Usage: termline [FLAG] [ARG]
 
   Print a coloured line across the width of the terminal.
 
-  Color names: black, red, green, yellow, blue, magenta, cyan, white,
-  bright-black, bright-red, bright-green, bright-yellow, bright-blue,
-  bright-magenta, bright-cyan, bright-white.
+  Color names:
+
+    • black           • bright-black (grey, gray)
+    • red             • bright-red
+    • green           • bright-green
+    • yellow          • bright-yellow
+    • blue            • bright-blue
+    • magenta         • bright-magenta
+    • cyan            • bright-cyan
+    • white           • bright-white
 
 Arguments:
   [color]           A named colour or a colour code between 0 and 255.
