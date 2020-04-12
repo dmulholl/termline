@@ -5,9 +5,10 @@
 
 print_help() {
     cat <<EOF
-Usage: termline [FLAG] [ARG]
+Usage: termline [FLAG] [ARGS]
 
-  Print a coloured line across the width of the terminal.
+  Prints coloured lines across the width of the terminal. Colours can be
+  specified by name or using a numerical colour-code between 0 and 255.
 
   Color names:
 
@@ -21,7 +22,7 @@ Usage: termline [FLAG] [ARG]
     • white           • bright-white
 
 Arguments:
-  [color]           A named colour or a colour code between 0 and 255.
+  [colors]          Colour names or codes.
 
 Flags:
   -h, --help        Print this help text and exit.
