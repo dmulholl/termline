@@ -8,4 +8,4 @@ A simple Bash script for drawing coloured lines across the width of a terminal.
 
 See the [documentation] for details.
 
-[documentation]: https://darrenmulholland.com/dev/termline.html
+[documentation]: http://www.dmulholl.com/dev/termline.html
